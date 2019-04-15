@@ -59,7 +59,7 @@ app.use('/ajax', ajaxRouter);
 app.use('/api', apiRouter);
 app.use(logger.sendResponse);
 
-const server = app.listen(settings.apiListenPort, () => {
+const server = app.listen(process.env.PORT, () => {
 	const serverAddress = server.address();
 	winston.info(`API running at http://localhost:${serverAddress.port}`);
 });
